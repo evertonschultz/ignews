@@ -20,6 +20,24 @@ export function Header() {
 
         <SignInButton />
       </div>
+
+      {/** MOBILE */}
+      <div className={styles.headerContentMobile}>
+        <div>
+          <img src="/images/logo.svg" alt="ig.news" />
+          
+          <SignInButton />
+        </div>
+        
+        <nav>
+          <ActiveLink activeClassName={styles.active} href="/">
+            <a>Home</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/posts">
+            <a>Posts</a>
+          </ActiveLink>
+        </nav>
+      </div>
     </header>
   )
 }

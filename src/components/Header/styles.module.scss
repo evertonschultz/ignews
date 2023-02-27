@@ -1,6 +1,10 @@
 .headerContainer {
   height: 5rem;
   border-bottom: 1px solid var(--gray-800);
+
+  @media (max-width: 900px) {
+    height: 8rem;
+  }
 }
 
 .headerContent {
@@ -54,5 +58,62 @@
 
   button {
     margin-left: auto;
+  }
+}
+
+//mobile
+.headerContentMobile {
+  display: none;
+  @media (max-width: 900px) {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    padding: 1rem;
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    > nav {
+      margin-left: 5rem;
+      height: 3rem;
+  
+      a {
+        display: inline-block;
+        position: relative;
+        padding: 0 0.5rem;
+        height: 3rem;
+        line-height: 4rem;
+        color: var(--gray-300);
+  
+        transition: color 0.2s;
+  
+        & + a {
+          margin-left: 2rem;
+        }
+  
+        &:hover {
+          color: var(--white);
+        }
+  
+        &.active {
+          color: var(--white);
+          font-weight: bold;
+        }
+  
+        &.active::after {
+          content: '';
+          height: 3px;
+          border-radius: 3px 3px 0 0;
+          width: 100%;
+          position: absolute;
+          bottom: 1px;
+          left: 0;
+          background: var(--yellow-500);
+        }
+      }
+    }
   }
 }
