@@ -50,15 +50,24 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
   }
 
   const prismic = getPrismicClient(req)
-  
-  const response = await prismic.getByUID<any>([prismic.predicates.at('publication', String(slug))], {
-    fetch: ['post.title', 'post.content'],
-  })
+
+  const response = await prismic.getByUID<any>('publication', String(slug), {})
+
+  let responseTitle = ''
+  let responseContent = ''
+
+  if(response.data?.title) {
+    responseTitle = response.data.title
+  }
+
+  if(response.data?.content) {
+    responseContent = response.data.content
+  }
 
   const post = {
     slug,
-    title: RichText.asText(response.data.title),
-    content: RichText.asHtml(response.data.content),
+    title: RichText.asText(responseTitle),
+    content: RichText.asHtml(responseContent),
     updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: 'long',
