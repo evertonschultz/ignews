@@ -49,7 +49,7 @@ Para o desenvolvimento foram aplicados conceitos como:
 
   <img alt="Ignews" title="#Ignews" src="./layout/posts.png" width="400px">
 
-  <img alt="Ignews" title="#Ignews" src="./layout/post_partial.png" width="400px">
+  <img alt="Ignews" title="#Ignews" src="./layout/post-partial.png" width="400px">
 
   <img alt="Ignews" title="#Ignews" src="./layout/post.png" width="400px">
 </p>
